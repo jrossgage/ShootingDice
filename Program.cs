@@ -21,6 +21,23 @@ namespace ShootingDice
             Player player3 = new Player();
             player3.Name = "Wilma";
 
+            SmackTalkingPlayer smack = new SmackTalkingPlayer();
+            smack.Name = "Duke";
+            smack.Taunt = "You stink!";
+
+            Player oneUp = new OneHigherPlayer();
+            oneUp.Name = "Frank";
+
+            Player human = new HumanPlayer();
+            human.Name = "Kyle";
+
+            CreativeSmackTalkingPlayer cSmack = new CreativeSmackTalkingPlayer();
+            cSmack.Name = "Dave";
+            cSmack.Taunts.Add("Wow, you are bad");
+            cSmack.Taunts.Add("Get better!");
+            cSmack.Taunts.Add("I am not having fun because you are here.");
+            cSmack.Taunts.Add("You are terrible at this game of chance. Life must treat you poorly in general.");
+
             player3.Play(player2);
 
             Console.WriteLine("-------------------");
@@ -33,7 +50,7 @@ namespace ShootingDice
             Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large
+                player1, player2, player3, large, smack, oneUp, human, cSmack
             };
 
             PlayMany(players);
