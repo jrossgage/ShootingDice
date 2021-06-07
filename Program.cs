@@ -8,6 +8,7 @@ namespace ShootingDice
     {
         static void Main(string[] args)
         {
+
             Player player1 = new Player();
             player1.Name = "Bob";
 
@@ -31,6 +32,11 @@ namespace ShootingDice
             Player human = new HumanPlayer();
             human.Name = "Kyle";
 
+            human.Play(smack);
+
+            Player sore = new SoreLoserPlayer();
+            sore.Name = "Dick";
+
             CreativeSmackTalkingPlayer cSmack = new CreativeSmackTalkingPlayer();
             cSmack.Name = "Dave";
             cSmack.Taunts.Add("Wow, you are bad");
@@ -39,6 +45,8 @@ namespace ShootingDice
             cSmack.Taunts.Add("You are terrible at this game of chance. Life must treat you poorly in general.");
 
             player3.Play(player2);
+
+            sore.Play(human);
 
             Console.WriteLine("-------------------");
 
