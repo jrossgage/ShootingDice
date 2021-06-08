@@ -11,9 +11,7 @@ namespace ShootingDice
         public override int Roll()
         {
             Console.Write("Enter a number for your roll. > ");
-            int userInput = Console.Read();
-
-            return userInput;
+            return int.Parse(Console.ReadLine());
 
         }
     }

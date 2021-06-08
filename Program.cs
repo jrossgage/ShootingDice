@@ -37,6 +37,13 @@ namespace ShootingDice
             Player sore = new SoreLoserPlayer();
             sore.Name = "Dick";
 
+            UpperHalfPlayer upper = new UpperHalfPlayer();
+            upper.Name = "Lucky Tim";
+
+            SoreLoserUpperHalfPlayer soreUpper = new SoreLoserUpperHalfPlayer();
+            soreUpper.Name = "Richard";
+
+
             CreativeSmackTalkingPlayer cSmack = new CreativeSmackTalkingPlayer();
             cSmack.Name = "Dave";
             cSmack.Taunts.Add("Wow, you are bad");
@@ -45,20 +52,26 @@ namespace ShootingDice
             cSmack.Taunts.Add("You are terrible at this game of chance. Life must treat you poorly in general.");
 
             player3.Play(player2);
+            Console.WriteLine("-------------------");
 
             sore.Play(human);
-
             Console.WriteLine("-------------------");
+
+            sore.Play(upper);
+            Console.WriteLine("-------------------");
+
 
             Player large = new LargeDicePlayer();
             large.Name = "Bigun Rollsalot";
 
             player1.Play(large);
+            Console.WriteLine("-------------------");
 
+            large.Play(soreUpper);
             Console.WriteLine("-------------------");
 
             List<Player> players = new List<Player>() {
-                player1, player2, player3, large, smack, oneUp, human, cSmack
+                player1, player2, player3, large, smack, oneUp, human, cSmack, soreUpper, upper, sore
             };
 
             PlayMany(players);
